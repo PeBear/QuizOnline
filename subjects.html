@@ -1,0 +1,32 @@
+<div ng-hide="rootStudent != null">
+    <h1 style="color: red;">Bạn phải đăng nhập để bắt đầu làm Quiz!!!</h1>
+</div>
+<div class="container" ng-show="rootStudent != null">
+    <div class="row mb-2">
+        <div class="card m-3 text-center" style="width:200px; height: 360px;" 
+            ng-repeat="subject in subjects | limitTo:pageSize:begin">
+            <img class="card-img-top" src="images/logos/{{subject.Logo}}" alt="Card image" style="width:100%" />
+            <div class="card-body">
+                <h5 class="card-title">{{subject.Name}}</h5>
+            </div>
+            <div class="card-footer">
+                <button ng-click="startQuiz(subject.Id,subject.Name)" class="btn btn-primary text-light">Làm bài</button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="pagination float-right mr-4">
+        <li class="page-item">
+            <button class="page-link" ng-click="first()">First</button>
+        </li>
+        <li class="page-item">
+            <button class="page-link" ng-click="prev()">Prev</button>
+        </li>
+        <li class="page-item">
+            <button class="page-link" ng-click="next()">Next</button>
+        </li>
+        <li class="page-item">
+            <button class="page-link" ng-click="last()">Last</button>
+        </li>
+    </ul>
+</div>

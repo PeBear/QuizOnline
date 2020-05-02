@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="homeCtrl">
+    <header>
+        <div class="row">
+            <img src="images/banner.png" alt="">
+        </div>
+    </header>
+    </div>
+    <div class="bg-dark" ng-include="'layout/nav.html'"></div>
+    <div ng-include="'login.html'"></div>
+    <div ng-include="'register.html'"></div>
+    <div ng-include="'update.html'"></div>
+    <div class="row">
+
+        <aside ng-controller="subjectCtrl" class="col-md-3 my-3" ng-include="'layout/aside.html'"></aside>
+
+        <article class="col-md-9 my-3" ng-view>
+        </article>
+
+    </div>
+
+    <footer ng-include="'layout/footer.html'" class="page-footer font-small special-color-dark pt-4 text-center">
+    </footer>
+
+    <script type="text/javascript" src="js/mainScript.js"></script>
+</body>
+
+</html>

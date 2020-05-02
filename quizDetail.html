@@ -1,0 +1,33 @@
+<div data-ng-init="countDown()">
+    <div class="progress mb-3" style="height: 30px;">
+        <div id="progressTimer"  class="progress-bar bg-info" style="width: 100%;"></div>
+    </div>
+    <form action="" ng-repeat="quiz in quizs | limitTo:1:index">
+        <div class="card" style="min-height: 350px;">
+            <div class="card-header">
+                <p class="card-text">Câu {{index + 1}}/10
+                    <button type="button" class="btn btn-primary float-right" ng-click="getMark()">finish</button>
+                </p>
+                <p class="card-title">{{quiz.Text}}</p>
+
+            </div>
+            <div class="card-body" style="font-size: 14px;">
+                <div class="form-group" ng-repeat="answer in quiz.Answers">
+                    <label>
+                    <input type="radio" ng-disabled="lockQuiz" ng-model="answers[index]" name="{{quiz.Id}}" value="{{answer.Id}}"/> {{answer.Text}}
+                </label>
+                </div>
+            </div>
+            <div class="card-footer p-1">
+                <ul class="pagination float-right">
+                    <li class="page-item">
+                        <button ng-hide="index == 0" class="page-link" ng-click="prev()">Prev</button>
+                    </li>
+                    <li class="page-item">
+                        <button ng-hide="index == 9" type="button" class="page-link" ng-click="next()">Next</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>

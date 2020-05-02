@@ -1,0 +1,80 @@
+<div id="updateModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">CẬP NHẬT THÔNG TIN</h4>
+                <button type="button" class="close" data-dismiss="modal">&times</button>
+            </div>
+            <form class="modal-body" name="registerForm" ng-submit="update(registerForm.$valid)">
+                <div class="form-group">
+                    <label>Username:</label>
+                    <input ng-model="rootStudent.username" class="form-control" type="text" placeholder="Nhập username" ng-readonly="true" />
+                </div>
+
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input ng-model="rootStudent.password" class="form-control" type="password" placeholder="Nhập password" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Họ và tên:</label>
+                    <input ng-model="rootStudent.fullname" class="form-control" type="text" placeholder="Nhập họ và tên" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Giới tính: </label>
+                    <label> <input type="radio" value="true" ng-model="student.gender" ng-checked="true"> Nam </label>
+                    <label> <input type="radio" value="false" ng-model="student.gender"> Nữ </label>
+                </div>
+
+                <div class="form-group">
+                    <label>Ngày sinh:</label>
+                    <input ng-model="rootStudent.birthday" class="form-control" type="date" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input ng-model="rootStudent.email" class="form-control" type="email" placeholder="Nhập email" required/>
+                </div>
+
+                <div class="form-group float-right">
+                    <button class="btn btn-primary">Cập nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="updatePasswordModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">ĐỔI MẬT KHẨU</h4>
+                <button type="button" class="close" data-dismiss="modal">&times</button>
+            </div>
+            <form class="modal-body" name="updatePasswordForm" ng-submit="changePassword(updatePasswordForm.$valid)">
+                <div class="form-group">
+                    <label>Current Password:</label>
+                    <input ng-model="change.password" class="form-control" type="password" placeholder="Nhập password" required/>
+                    <div ng-show="change.inValid" style="color: red;">Current password wrong</div>
+                </div>
+
+                <div class="form-group">
+                    <label>New Password:</label>
+                    <input ng-model="change.newPassword" class="form-control" type="password" placeholder="Nhập new password" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm New Password:</label>
+                    <input ng-model="change.confirmPassword" class="form-control" type="password" placeholder="Confirm password" required/>
+                </div>
+                <div ng-show="change.newPassword != change.confirmPassword" style="color: red;">
+                    New password and confirm password not match!
+                </div>
+                <div class="form-group float-right">
+                    <button class="btn btn-primary">Đổi mật khẩu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

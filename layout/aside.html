@@ -1,0 +1,16 @@
+<div class="container" ng-show="rootStudent != null">
+    <ul class="list-group">
+        <button class="list-group-item fa fa-list-ul bg-primary text-light" data-toggle="collapse" data-target="#subjectList">
+            DANH SÁCH MÔN HỌC
+        </button>
+    </ul>
+    <div id="subjectList" class="list-group-item p-0">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action" ng-repeat="subject in subjects">
+                <a href="#" ng-click="startQuiz(subject.Id,subject.Name)">
+                    <img class="mr-2" src="images/logos/{{subject.Logo}}" alt="" width="40px" /> {{subject.Name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
